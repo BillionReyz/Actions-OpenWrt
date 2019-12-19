@@ -46,6 +46,15 @@ jobs:
         curl -fsSL https://raw.githubusercontent.com/P3TERX/dotfiles/master/.bashrc >> ~/.bashrc
         sudo ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
 
+    - name: Clone Custom feeds source code
+      run: |
+        cd package
+        mkdir openwrt-packages
+        cd openwrt-packages
+        git clone https://github.com/openwrt-develop/luci-theme-atmaterial.git
+        git clone https://github.com/Ameykyl/luci-app-koolproxyR
+        git clone https://github.com/rosywrt/luci-theme-rosy
+
     - name: Clone source code
       env: 
         REPO_URL: https://github.com/coolsnowwolf/lede
