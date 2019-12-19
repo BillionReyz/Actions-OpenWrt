@@ -54,7 +54,7 @@ jobs:
 
     - name: Clone Custom feeds source code
       run: |
-        cd package
+        cd openwrt/package
         mkdir openwrt-packages
         cd openwrt-packages
         git clone https://github.com/openwrt-develop/luci-theme-atmaterial.git
