@@ -46,13 +46,13 @@ jobs:
         curl -fsSL https://raw.githubusercontent.com/P3TERX/dotfiles/master/.bashrc >> ~/.bashrc
         sudo ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
 
-    - name: Clone source code
+    - name: Clone Lean's Openwrt source code
       env: 
         REPO_URL: https://github.com/coolsnowwolf/lede
         REPO_BRANCH: master
       run: git clone --depth 1 $REPO_URL -b $REPO_BRANCH openwrt
 
-    - name: Clone Custom feeds source code
+    - name: Clone custom packages' source code
       run: |
         cd openwrt/package
         mkdir openwrt-packages
