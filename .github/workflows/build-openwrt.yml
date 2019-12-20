@@ -82,10 +82,12 @@ jobs:
     - name: SSH connection to Actions
       uses: P3TERX/debugger-action@master
 
-    - name: Upload .config file
+    - name: Export .config file
       run: |
         cd openwrt
         ./scripts/difconfig.sh > diffconfig
+
+    - name: Upload .config file
       uses: actions/upload-artifact@master
       if: always()
       with:
