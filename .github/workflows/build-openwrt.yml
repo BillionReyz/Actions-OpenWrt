@@ -82,6 +82,16 @@ jobs:
     - name: SSH connection to Actions
       uses: P3TERX/debugger-action@master
 
+    - name: Upload .config file
+      run: |
+        cd openwrt
+        ./scripts/difconfig.sh > diffconfig
+      uses: actions/upload-artifact@master
+      if: always()
+      with:
+        name: .config
+        path: openwrt/diffconfig
+
     - name: Download package
       run: |
         cd openwrt && make download -j8
