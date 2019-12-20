@@ -85,7 +85,7 @@ jobs:
     - name: Export .config file
       run: |
         cd openwrt
-        ./scripts/difconfig.sh > diffconfig
+        ./scripts/diffconfig.sh > diffconfig
 
     - name: Upload .config file
       uses: actions/upload-artifact@master
